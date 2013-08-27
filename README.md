@@ -5,4 +5,6 @@ Personal notes about git
 
 	git add *
 	git commit -m "first commit"
-	git push -u origin master
+	git push -u origin master -> First time
+
+	git commit -a -m "...."
