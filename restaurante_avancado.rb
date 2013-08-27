@@ -229,3 +229,75 @@ puts "maiusculos: #{nomes_maiusculos}"
 
 puts "-----------------------------------"
 
+class Array
+  def cria_uma_array
+    array = []
+    self.each do |elemento|
+      array << yield(elemento)
+    end
+    array
+  end  
+end
+
+nm_array = funcionarios.cria_uma_array { |nome| "teste: #{nome.upcase}" }
+
+puts "funcionarios.cria_uma_array: #{nm_array}"
+
+puts "-----------------------------------"
+
+puts (1..7).to_a #=> [1, 2, 3, 4, 5, 6, 7]
+
+puts "-----------------------------------"
+
+puts (1..10).find_all { |i|  i % 3 == 0 } #=> [3, 6, 9]
+
+puts "-----------------------------------"
+
+puts [1,2,3,4,5].select { |num|  num.even?  } #=> [2, 4] numeros pares (.even?) retorna o proprio numero
+
+puts "-----------------------------------"
+
+puts (1..100).detect { |i| i % 5 == 0 and i % 7 == 0 } #=> 35 divisao exata (sem resto) com 5 e 7 e retorna o proprio numero
+
+puts "-----------------------------------"
+
+puts (1..100).select { |i| i % 5 == 0 and i % 7 == 0 } #=> [35, 70] divisao exata (sem resto) com 5 e 7 e retorna lista com os numeros encontrados
+
+puts "-----------------------------------"
+
+puts (1..100).find_index { |i| i % 5 == 0 and i % 7 == 0 }  #=> 34 retorna o indice do primeiro encontrado
+
+puts "-----------------------------------"
+
+puts (5..10).reduce(:+) #=> 45 soma todos os elementos do array (:+)
+
+puts "-----------------------------------"
+
+puts (5..10).inject { |sum, n| sum + n } #=> 45 tambem soma todos os elementos de uma forma mais verbosa
+
+puts "-----------------------------------"
+
+puts (5..10).reduce(:*) #=> 151200 multiplica todos os elementos do array
+
+puts "-----------------------------------"
+
+puts (5..10).inject(1) { |product, n| product * n } #=> 151200 multiplica todos os elementos do array de uma forma mais verbosa
+
+puts "-----------------------------------"
+
+#duas formas de criar um array de strings e pegar a maior palavra dentre elas
+
+longest = ['cat', 'sheep', 'bear' ].inject do |memo, word|
+   memo.length > word.length ? memo : word
+end
+
+puts longest
+
+longest = %w{ cat sheep bear }.inject do |memo, word|
+   memo.length > word.length ? memo : word
+end
+
+puts longest
+
+puts "-----------------------------------"
+
