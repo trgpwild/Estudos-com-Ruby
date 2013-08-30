@@ -50,3 +50,14 @@ end
 rest = Restaurante.new "teste"
 
 Restaurante.relatorio
+
+# Refatorando a classe e usando agrupamento para os metodos de classe
+class Restaurante
+
+  class << self # É dessa maneira que se agrupa, dentro de uma classe interna
+    def relatorio
+      puts "Foram criados #{@@total} restaurantes"
+    end
+  end
+
+end
