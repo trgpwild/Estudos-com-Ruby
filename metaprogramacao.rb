@@ -47,3 +47,6 @@ class Restaurante
   end
 end
 
+rest = Restaurante.new "teste"
+
+Restaurante.relatorio
