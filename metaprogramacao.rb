@@ -30,3 +30,20 @@ p.anda
 
 #p2 = Pessoa.new
 #p2.anda #Isso falharia porque o metodo anda somente existe na instancia 'p'
+
+class Restaurante
+  def initialize(nome)
+    puts "criando um novo restaurante: #{nome}"
+    @@total ||= 0
+    @@total = @@total + 1
+    puts "Restaurantes criados: #{@@total}"
+    @nome = nome
+  end
+end
+
+class Restaurante
+  def self.relatorio
+    puts "Foram criados #{@@total} restaurantes"
+  end
+end
+
