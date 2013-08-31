@@ -61,3 +61,12 @@ class Restaurante
   end
 
 end
+
+#texto = "nao sou vazio"
+#texto.empty? # => false
+
+#class Pessoa
+#  def ==(outra)
+#    self.cpf == outra.cpf
+#  end
+#end
