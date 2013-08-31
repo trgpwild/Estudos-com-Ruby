@@ -70,3 +70,48 @@ end
 #    self.cpf == outra.cpf
 #  end
 #end
+
+class Aluno
+  # nao sabe nada
+end
+
+class Professor
+  def ensina(aluno)
+    def aluno.escreve
+      "sei escrever!"
+    end
+  end
+end
+
+juca = Aluno.new
+puts "Juca sabe escrever? #{juca.respond_to? :escreve}"
+# => false
+
+professor = Professor.new
+professor.ensina juca
+puts juca.escreve
+# => "sei escrever!"
+
+class Pessoa
+  attr_accessor :nome # Cria os metodos 'nome' e 'nome='
+end
+
+p = Pessoa.new
+p.nome = "Joaquim"
+puts p.nome
+# => "Joaquim"
+
+#Encapsulamento
+class Pessoa
+
+  private
+  def vai_ao_banheiro
+    # ...
+  end
+
+  public
+  def sou_um_metodo_publico
+    # ...
+  end
+
+end
